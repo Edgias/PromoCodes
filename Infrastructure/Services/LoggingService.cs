@@ -3,10 +3,10 @@ using TheRoom.PromoCodes.ApplicationCore.Interfaces;
 
 namespace TheRoom.PromoCodes.Infrastructure.Services
 {
-    public class LoggerService<T> : IAppLogger<T>
+    public class LoggingService<T> : IAppLogger<T>
     {
         private readonly ILogger<T> _logger;
-        public LoggerService(ILoggerFactory loggerFactory)
+        public LoggingService(ILoggerFactory loggerFactory)
         {
             _logger = loggerFactory.CreateLogger<T>();
         }

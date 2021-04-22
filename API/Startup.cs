@@ -10,9 +10,15 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using TheRoom.PromoCodes.API.Interfaces;
+using TheRoom.PromoCodes.API.Models.Requests;
+using TheRoom.PromoCodes.API.Models.Responses;
+using TheRoom.PromoCodes.API.Services;
+using TheRoom.PromoCodes.ApplicationCore.Entities;
 using TheRoom.PromoCodes.ApplicationCore.Interfaces;
 using TheRoom.PromoCodes.Infrastructure.Data;
 using TheRoom.PromoCodes.Infrastructure.Identity;
+using TheRoom.PromoCodes.Infrastructure.Services;
 
 namespace API
 {
@@ -76,7 +82,10 @@ namespace API
                     .AddDefaultTokenProviders();
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
-            //services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
+            services.AddScoped(typeof(IAppLogger<>), typeof(LoggingService<>));
+            services.AddScoped<IEmailSender, EmailSender>();
+            services.AddScoped<IMapper<Service, ServiceRequest, ServiceResponse>, ServiceMapper>();
+            services.AddScoped<IMapper<UserBonus, BonusActivationRequest, UserBonusResponse>, UserBonusMapper>();
             services.AddScoped<ITokenClaimsService, IdentityTokenClaimService>();
 
 
