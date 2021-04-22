@@ -7,30 +7,34 @@ namespace TheRoom.PromoCodes.UnitTests.ApplicationCore.Specifications
 {
     public class ServiceFilterSpecification
     {
-        [Fact]
-        public void Returns2ServicesSkippingTheFirstOne()
+        [Theory]
+        [InlineData(2)]
+        public void MatchesExpectedNumberofItems(int expectedCount)
         {
             PromoCodes.ApplicationCore.Specifications.ServiceSpecification specification = 
                 new PromoCodes.ApplicationCore.Specifications.ServiceSpecification(1, 2, "Tes");
 
             IQueryable<Service> result = GetTestCollection()
                 .AsQueryable()
-                .Where(specification.Criteria);
+                .Where(specification.Criteria)
+                .Skip(1)
+                .Take(2);
 
             Assert.NotNull(result);
-            Assert.Equal(2, result.ToList().Count);
+            Assert.Equal(expectedCount, result.ToList().Count);
         }
 
         private List<Service> GetTestCollection()
         {
-            var catalogItemList = new List<Service>();
+            List<Service> serviceList = new List<Service>
+            {
+                new Service("Test 1"),
+                new Service("Test 2"),
+                new Service("Test 3"),
+                new Service("Test 4")
+            };
 
-            catalogItemList.Add(new Service("Test 1"));
-            catalogItemList.Add(new Service("Test 2"));
-            catalogItemList.Add(new Service("Test 3"));
-            catalogItemList.Add(new Service("Test 4"));
-
-            return catalogItemList;
+            return serviceList;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace TheRoom.PromoCodes.UnitTests.ApplicationCore.Entities.ServiceTests
         public void ThrowsArgumentExceptionGivenEmptyDescription()
         {
             string newValue = "";
-            Assert.Throws<ArgumentException>(() => _testService.UpdateDetails(newValue));
+            Assert.Throws<ArgumentNullException>(() => _testService.UpdateDetails(newValue));
         }
 
         [Fact]

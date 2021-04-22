@@ -21,7 +21,7 @@ namespace TheRoom.PromoCodes.UnitTests.ApplicationCore.Entities.UserBonusTests
         public void ThrowsArgumentExceptionGivenEmptyUserId()
         {
             string newValue = "";
-            Assert.Throws<ArgumentException>(() => new UserBonus(newValue, _validServiceId));
+            Assert.Throws<ArgumentNullException>(() => new UserBonus(newValue, _validServiceId));
         }
 
         [Fact]
