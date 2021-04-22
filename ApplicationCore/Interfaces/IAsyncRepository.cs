@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using TheRoom.PromoCodes.ApplicationCore.Entities;
+using TheRoom.PromoCodes.ApplicationCore.SharedKernel;
 
 namespace TheRoom.PromoCodes.ApplicationCore.Interfaces
 {

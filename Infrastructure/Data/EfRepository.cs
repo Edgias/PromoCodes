@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using TheRoom.PromoCodes.ApplicationCore.Entities;
 using TheRoom.PromoCodes.ApplicationCore.Interfaces;
+using TheRoom.PromoCodes.ApplicationCore.SharedKernel;
 
 namespace TheRoom.PromoCodes.Infrastructure.Data
 {

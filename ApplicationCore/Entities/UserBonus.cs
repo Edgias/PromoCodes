@@ -1,5 +1,6 @@
 ﻿using System;
 using TheRoom.PromoCodes.ApplicationCore.Events;
+using TheRoom.PromoCodes.ApplicationCore.SharedKernel;
 
 namespace TheRoom.PromoCodes.ApplicationCore.Entities
 {
@@ -13,6 +14,9 @@ namespace TheRoom.PromoCodes.ApplicationCore.Entities
 
         public UserBonus(string userId, Guid serviceId)
         {
+            Guard.AgainstNullOrEmpty(userId, nameof(userId));
+            Guard.AgainstNull(serviceId, nameof(serviceId));
+
             UserId = userId;
             ServiceId = serviceId;
             AddDomainEvent(new BonusActivatedEvent(serviceId, userId));

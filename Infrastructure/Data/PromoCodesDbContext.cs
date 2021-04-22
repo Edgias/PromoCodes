@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using TheRoom.PromoCodes.ApplicationCore.Entities;
-using TheRoom.PromoCodes.ApplicationCore.Events;
+using TheRoom.PromoCodes.ApplicationCore.SharedKernel;
 
 namespace TheRoom.PromoCodes.Infrastructure.Data
 {

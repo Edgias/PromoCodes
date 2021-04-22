@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using TheRoom.PromoCodes.ApplicationCore.Entities;
 using TheRoom.PromoCodes.ApplicationCore.Interfaces;
+using TheRoom.PromoCodes.ApplicationCore.SharedKernel;
 
 namespace TheRoom.PromoCodes.Infrastructure.Data
 {

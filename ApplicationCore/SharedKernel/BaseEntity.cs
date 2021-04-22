@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using TheRoom.PromoCodes.ApplicationCore.Events;
 
-namespace TheRoom.PromoCodes.ApplicationCore.Entities
+namespace TheRoom.PromoCodes.ApplicationCore.SharedKernel
 {
     public abstract class BaseEntity
     {

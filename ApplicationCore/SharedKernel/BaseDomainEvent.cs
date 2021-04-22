@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System;
 
-namespace TheRoom.PromoCodes.ApplicationCore.Events
+namespace TheRoom.PromoCodes.ApplicationCore.SharedKernel
 {
     public abstract class BaseDomainEvent : INotification
     {
